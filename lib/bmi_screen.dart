@@ -40,12 +40,12 @@ class _BmiScreenState extends State<BmiScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.ac_unit, size: 70, color: Colors.black),
+                          Icon(Icons.male_outlined, size: 70, color: Colors.black),
                           SizedBox(height: 20),
                           Text(
                             'MALE',
                             style: TextStyle(
-                              fontSize: 40,
+                              fontSize: 30,
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
                             ),
@@ -64,12 +64,12 @@ class _BmiScreenState extends State<BmiScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.ac_unit, size: 70, color: Colors.black),
+                          Icon(Icons.female_outlined, size: 70, color: Colors.black),
                           SizedBox(height: 20),
                           Text(
                             'FEMALE',
                             style: TextStyle(
-                              fontSize: 40,
+                              fontSize: 30,
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
                             ),
@@ -92,7 +92,7 @@ class _BmiScreenState extends State<BmiScreen> {
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 10,),
+                    SizedBox(height: 10),
                     Text(
                       'HEIGHT',
                       style: TextStyle(
@@ -110,27 +110,156 @@ class _BmiScreenState extends State<BmiScreen> {
                           '180',
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 30,
+                            fontSize: 40,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         SizedBox(width: 5),
                         Text(
-                          'cm',
-                          style: TextStyle(color: Colors.black, fontSize: 20,fontWeight: FontWeight.bold),
+                          'CM',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
                     Slider(
-                        value: 80,
-                        onChanged: (value){
-
-                        },
+                      value: 80,
+                      onChanged: (value) {},
                       max: 220,
                       min: 50,
                       activeColor: Colors.blue,
-                    )
+                    ),
                   ],
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[400],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 10),
+                          Text(
+                            'AGE',
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                          Text(
+                            '180',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              FloatingActionButton(
+                                onPressed: () {},
+                                mini: true,
+                                shape: CircleBorder(),
+                                elevation: 0,
+                                backgroundColor: Colors.blue,
+                                child: Icon(Icons.remove, color: Colors.white),
+                              ),
+                              FloatingActionButton(
+                                onPressed: () {},
+                                mini: true,
+                                shape: CircleBorder(),
+                                elevation: 0,
+                                backgroundColor: Colors.blue,
+                                child: Icon(Icons.add, color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[400],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 10),
+                          Text(
+                            'WEIGHT',
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                          Text(
+                            '180',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              FloatingActionButton(
+                                onPressed: () {},
+                                mini: true,
+                                shape: CircleBorder(),
+                                elevation: 0,
+                                backgroundColor: Colors.blue,
+                                child: Icon(Icons.remove, color: Colors.white),
+                              ),
+                              FloatingActionButton(
+                                onPressed: () {},
+                                mini: true,
+                                shape: CircleBorder(),
+                                elevation: 0,
+                                backgroundColor: Colors.blue,
+                                child: Icon(Icons.add, color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: MaterialButton(
+              onPressed: () {},
+
+              color: Colors.blue,
+              height: 60,
+              child: Text(
+                'CALCULATE',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
