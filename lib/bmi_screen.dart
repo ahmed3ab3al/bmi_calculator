@@ -34,7 +34,7 @@ class _BmiScreenState extends State<BmiScreen> {
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.grey[500],
+                        color: Colors.grey[400],
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(
@@ -43,7 +43,7 @@ class _BmiScreenState extends State<BmiScreen> {
                           Icon(Icons.ac_unit, size: 70, color: Colors.black),
                           SizedBox(height: 20),
                           Text(
-                            'Male',
+                            'MALE',
                             style: TextStyle(
                               fontSize: 40,
                               fontWeight: FontWeight.bold,
@@ -58,7 +58,7 @@ class _BmiScreenState extends State<BmiScreen> {
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.grey[500],
+                        color: Colors.grey[400],
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(
@@ -67,7 +67,7 @@ class _BmiScreenState extends State<BmiScreen> {
                           Icon(Icons.ac_unit, size: 70, color: Colors.black),
                           SizedBox(height: 20),
                           Text(
-                            'Female',
+                            'FEMALE',
                             style: TextStyle(
                               fontSize: 40,
                               fontWeight: FontWeight.bold,
@@ -79,6 +79,59 @@ class _BmiScreenState extends State<BmiScreen> {
                     ),
                   ),
                 ],
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[400],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(height: 10,),
+                    Text(
+                      'HEIGHT',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                        Text(
+                          '180',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          'cm',
+                          style: TextStyle(color: Colors.black, fontSize: 20,fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    Slider(
+                        value: 80,
+                        onChanged: (value){
+
+                        },
+                      max: 220,
+                      min: 50,
+                      activeColor: Colors.blue,
+                    )
+                  ],
+                ),
               ),
             ),
           ),
