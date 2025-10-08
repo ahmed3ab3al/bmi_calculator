@@ -1,4 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+
+import 'bmi_result_screen.dart';
 
 class BmiScreen extends StatefulWidget {
   const BmiScreen({super.key});
@@ -9,9 +13,9 @@ class BmiScreen extends StatefulWidget {
 
 class _BmiScreenState extends State<BmiScreen> {
   bool isMale = true;
-  double sliderValue= 80;
-  int age=18;
-  int weight=60;
+  double sliderValue = 80;
+  int age = 18;
+  int weight = 60;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,20 +41,24 @@ class _BmiScreenState extends State<BmiScreen> {
                 children: [
                   Expanded(
                     child: GestureDetector(
-                      onTap:(){
+                      onTap: () {
                         setState(() {
                           isMale = true;
                         });
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          color: isMale  ? Colors.blue : Colors.grey[400],
+                          color: isMale ? Colors.blue : Colors.grey[400],
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.male_outlined, size: 70, color: Colors.black),
+                            Icon(
+                              Icons.male_outlined,
+                              size: 70,
+                              color: Colors.black,
+                            ),
                             SizedBox(height: 20),
                             Text(
                               'MALE',
@@ -68,20 +76,24 @@ class _BmiScreenState extends State<BmiScreen> {
                   SizedBox(width: 20),
                   Expanded(
                     child: GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         setState(() {
-                          isMale=false;
+                          isMale = false;
                         });
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          color: isMale ? Colors.grey[400] :Colors.blue,
+                          color: isMale ? Colors.grey[400] : Colors.blue,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.female_outlined, size: 70, color: Colors.black),
+                            Icon(
+                              Icons.female_outlined,
+                              size: 70,
+                              color: Colors.black,
+                            ),
                             SizedBox(height: 20),
                             Text(
                               'FEMALE',
@@ -125,7 +137,7 @@ class _BmiScreenState extends State<BmiScreen> {
                       textBaseline: TextBaseline.alphabetic,
                       children: [
                         Text(
-                         '$sliderValue',
+                          '${sliderValue.round()}',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 40,
@@ -147,7 +159,7 @@ class _BmiScreenState extends State<BmiScreen> {
                       value: sliderValue,
                       onChanged: (value) {
                         setState(() {
-                          sliderValue=value.roundToDouble();
+                          sliderValue = value;
                         });
                       },
                       max: 220,
@@ -195,9 +207,10 @@ class _BmiScreenState extends State<BmiScreen> {
                               FloatingActionButton(
                                 onPressed: () {
                                   setState(() {
-                                   age--;
+                                    age--;
                                   });
                                 },
+                                heroTag: 'age-',
                                 mini: true,
                                 shape: CircleBorder(),
                                 elevation: 0,
@@ -210,6 +223,7 @@ class _BmiScreenState extends State<BmiScreen> {
                                     age++;
                                   });
                                 },
+                                heroTag: 'age+',
                                 mini: true,
                                 shape: CircleBorder(),
                                 elevation: 0,
@@ -257,6 +271,7 @@ class _BmiScreenState extends State<BmiScreen> {
                                     weight--;
                                   });
                                 },
+                                heroTag: 'weight-',
                                 mini: true,
                                 shape: CircleBorder(),
                                 elevation: 0,
@@ -269,6 +284,7 @@ class _BmiScreenState extends State<BmiScreen> {
                                     weight++;
                                   });
                                 },
+                                heroTag: 'weight+',
                                 mini: true,
                                 shape: CircleBorder(),
                                 elevation: 0,
@@ -288,9 +304,20 @@ class _BmiScreenState extends State<BmiScreen> {
           SizedBox(
             width: double.infinity,
             child: MaterialButton(
-              onPressed: () {},
-
               color: Colors.blue,
+              onPressed: () {
+                double result = weight / pow(sliderValue / 100, 2);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BmiResultScreen(
+                      age: age,
+                      result: result,
+                      isMale: isMale,
+                    ),
+                  ),
+                );
+              },
               height: 60,
               child: Text(
                 'CALCULATE',
