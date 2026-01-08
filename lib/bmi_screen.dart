@@ -12,11 +12,11 @@ class _BmiScreenState extends State<BmiScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(" Bmi Calculator",style: TextStyle(
-          color: Colors.white
-        ),),
+        title: const Text(
+          " Bmi Calculator",
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.blue,
-
       ),
       body: Column(
         children: [
@@ -28,41 +28,104 @@ class _BmiScreenState extends State<BmiScreen> {
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.grey,
+                        color: Colors.grey[400],
+                        borderRadius: BorderRadius.circular(8),
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.male,size: 50,),
-                          SizedBox(height: 8,),
-                          const Text(" MALE ",style: TextStyle(
-                            fontSize: 35,
-                            fontWeight: FontWeight.bold,
-                          ),)
+                          Icon(Icons.male, size: 70),
+                          SizedBox(height: 8),
+                          const Text(
+                            " MALE ",
+                            style: TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(width: 20,),
+                  SizedBox(width: 20),
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.grey,
+                        color: Colors.grey[400],
+                        borderRadius: BorderRadius.circular(8),
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.female,size: 50,),
-                          SizedBox(height: 8,),
-                          const Text(" FEMALE ",style: TextStyle(
-                            fontSize: 35,
-                            fontWeight: FontWeight.bold,
-                          ),)
+                          Icon(Icons.female, size: 70),
+                          SizedBox(height: 8),
+                          const Text(
+                            " FEMALE ",
+                            style: TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ],
                       ),
                     ),
                   ),
                 ],
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[400],
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      " HEIGHT ",
+                      style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                        Text(
+                          "180",
+                          style: TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        SizedBox(width: 5,),
+                        Text(
+                          "CM",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Slider(
+                      inactiveColor: Colors.blue[300],
+                      activeColor: Colors.blue,
+                      value: 120,
+                      onChanged: (value) {
+                        print(value.round());
+                      },
+                      min: 80,
+                      max: 220,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
