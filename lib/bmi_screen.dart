@@ -146,7 +146,7 @@ class _BmiScreenState extends State<BmiScreen> {
                           const Text(
                             "AGE",
                             style: TextStyle(
-                              fontSize: 35,
+                              fontSize: 28,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -193,9 +193,9 @@ class _BmiScreenState extends State<BmiScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            "Weight",
+                            "WEIGHT",
                             style: TextStyle(
-                              fontSize: 35,
+                              fontSize: 28,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -235,6 +235,23 @@ class _BmiScreenState extends State<BmiScreen> {
               ),
             ),
           ),
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(8)
+            ),
+            child: MaterialButton(onPressed: (){},
+              height: 55,
+            child: Text(
+              'Calculate',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20
+              ),
+            ),
+            ),
+          )
         ],
       ),
     );
