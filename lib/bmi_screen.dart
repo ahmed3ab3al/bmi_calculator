@@ -129,6 +129,112 @@ class _BmiScreenState extends State<BmiScreen> {
               ),
             ),
           ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[400],
+                        borderRadius: BorderRadius.circular(8)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "AGE",
+                            style: TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const Text(
+                            "50",
+                            style: TextStyle(
+                              fontSize: 40,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              FloatingActionButton(onPressed: (){},
+                                shape: CircleBorder(),
+                                backgroundColor: Colors.blue,
+                                mini: true,
+                              child: Icon(
+                                Icons.remove,
+                                color: Colors.white,
+                              ),),
+                              FloatingActionButton(onPressed: (){},
+                                shape: CircleBorder(),
+                                backgroundColor: Colors.blue,
+                                mini: true,
+                                child: Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                ),)
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 20,),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.grey[400],
+                          borderRadius: BorderRadius.circular(8)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "Weight",
+                            style: TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const Text(
+                            "50",
+                            style: TextStyle(
+                              fontSize: 40,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              FloatingActionButton(onPressed: (){},
+                                shape: CircleBorder(),
+                                backgroundColor: Colors.blue,
+                                mini: true,
+                                child: Icon(
+                                  Icons.remove,
+                                  color: Colors.white,
+                                ),),
+                              FloatingActionButton(onPressed: (){},
+                                shape: CircleBorder(),
+                                backgroundColor: Colors.blue,
+                                mini: true,
+                                child: Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                ),)
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
