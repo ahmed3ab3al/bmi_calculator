@@ -9,6 +9,7 @@ class BmiScreen extends StatefulWidget {
 
 class _BmiScreenState extends State<BmiScreen> {
   bool isMale = true;
+  double height = 120;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,7 +114,7 @@ class _BmiScreenState extends State<BmiScreen> {
                       textBaseline: TextBaseline.alphabetic,
                       children: [
                         Text(
-                          "180",
+                          "${height.round()}",
                           style: TextStyle(
                             fontSize: 40,
                             fontWeight: FontWeight.w900,
@@ -132,8 +133,12 @@ class _BmiScreenState extends State<BmiScreen> {
                     Slider(
                       inactiveColor: Colors.blue[300],
                       activeColor: Colors.blue,
-                      value: 120,
-                      onChanged: (value) {},
+                      value: height,
+                      onChanged: (value) {
+                        setState(() {
+                          height= value;
+                        });
+                      },
                       min: 80,
                       max: 220,
                     ),
