@@ -10,6 +10,8 @@ class BmiScreen extends StatefulWidget {
 class _BmiScreenState extends State<BmiScreen> {
   bool isMale = true;
   double height = 120;
+  int age =20;
+  int weight = 50;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -168,8 +170,8 @@ class _BmiScreenState extends State<BmiScreen> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const Text(
-                            "50",
+                           Text(
+                            "$age",
                             style: TextStyle(
                               fontSize: 40,
                               fontWeight: FontWeight.w900,
@@ -178,7 +180,11 @@ class _BmiScreenState extends State<BmiScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              FloatingActionButton(onPressed: (){},
+                              FloatingActionButton(onPressed: (){
+                                setState(() {
+                                  age--;
+                                });
+                              },
                                 shape: CircleBorder(),
                                 backgroundColor: Colors.blue,
                                 mini: true,
@@ -186,7 +192,11 @@ class _BmiScreenState extends State<BmiScreen> {
                                 Icons.remove,
                                 color: Colors.white,
                               ),),
-                              FloatingActionButton(onPressed: (){},
+                              FloatingActionButton(onPressed: (){
+                                setState(() {
+                                  age++;
+                                });
+                              },
                                 shape: CircleBorder(),
                                 backgroundColor: Colors.blue,
                                 mini: true,
@@ -217,8 +227,8 @@ class _BmiScreenState extends State<BmiScreen> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const Text(
-                            "50",
+                           Text(
+                            "$weight",
                             style: TextStyle(
                               fontSize: 40,
                               fontWeight: FontWeight.w900,
@@ -227,7 +237,11 @@ class _BmiScreenState extends State<BmiScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              FloatingActionButton(onPressed: (){},
+                              FloatingActionButton(onPressed: (){
+                                setState(() {
+                                  weight--;
+                                });
+                              },
                                 shape: CircleBorder(),
                                 backgroundColor: Colors.blue,
                                 mini: true,
@@ -235,7 +249,11 @@ class _BmiScreenState extends State<BmiScreen> {
                                   Icons.remove,
                                   color: Colors.white,
                                 ),),
-                              FloatingActionButton(onPressed: (){},
+                              FloatingActionButton(onPressed: (){
+                                setState(() {
+                                  weight++;
+                                });
+                              },
                                 shape: CircleBorder(),
                                 backgroundColor: Colors.blue,
                                 mini: true,
