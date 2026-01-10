@@ -8,6 +8,7 @@ class BmiScreen extends StatefulWidget {
 }
 
 class _BmiScreenState extends State<BmiScreen> {
+  bool isMale = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,47 +27,61 @@ class _BmiScreenState extends State<BmiScreen> {
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[400],
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.male, size: 70),
-                          SizedBox(height: 8),
-                          const Text(
-                            " MALE ",
-                            style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.bold,
+                    child: GestureDetector(
+                      onTap: (){
+                        setState(() {
+                          isMale= true;
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: isMale ? Colors.blue : Colors.grey[400],
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.male, size: 70),
+                            SizedBox(height: 8),
+                            const Text(
+                              " MALE ",
+                              style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(width: 20),
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[400],
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.female, size: 70),
-                          SizedBox(height: 8),
-                          const Text(
-                            " FEMALE ",
-                            style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.bold,
+                    child: GestureDetector(
+                      onTap: (){
+                        setState(() {
+                          isMale= false;
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: isMale ?Colors.grey[400]:Colors.blue,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.female, size: 70),
+                            SizedBox(height: 8),
+                            const Text(
+                              " FEMALE ",
+                              style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -118,9 +133,7 @@ class _BmiScreenState extends State<BmiScreen> {
                       inactiveColor: Colors.blue[300],
                       activeColor: Colors.blue,
                       value: 120,
-                      onChanged: (value) {
-                        print(value.round());
-                      },
+                      onChanged: (value) {},
                       min: 80,
                       max: 220,
                     ),
